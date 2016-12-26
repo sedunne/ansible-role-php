@@ -7,6 +7,7 @@ galaxy_info:
   platforms:
   - name: EL
     versions:
-    - 7
+      - 7
 dependencies:
-  - nexcess.repo-scl
+  - src: "https://github.com/nexcess/ansible-role-repo-nexcess-scl.git"
+    name: "nexcess.repo-scl"
