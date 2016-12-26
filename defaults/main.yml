@@ -23,3 +23,4 @@ php_pecl_modules:
   - "pecl-redis"
   - "pecl-libsodium"
 php_package_state: "present"
+php_install_browscap_ini: true
