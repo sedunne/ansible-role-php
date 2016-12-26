@@ -1,10 +1,6 @@
 # Ansible Role: Nexcess SCL PHP
 
-Installs Necxess' SCL PHP Version(s).  Note that this only installs the CLI version of PHP.
-
-## Requirements
-
-- https://github.com/nexcess/ansible-role-repo-nexcess-scl
+Installs Necxess' SCL PHP Version(s).  By default this role only installs the CLI version of PHP.  FPM options are available (see Role Variables below).
 
 ## Role Variables
 
@@ -12,7 +8,7 @@ See `defaults/main.yml`.
 
 ## Dependencies
 
-None.
+- https://github.com/nexcess/ansible-role-repo-nexcess-scl
 
 ## Add to Requirements
 

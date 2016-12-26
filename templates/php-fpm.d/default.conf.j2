@@ -1,0 +1,11 @@
+[default]
+listen = /dev/shm/default-php.sock
+listen.owner = nobody
+listen.group = nobody
+listen.mode = 0660
+user = nobody
+group = nobody
+catch_workers_output = no
+pm = static
+pm.max_children = 1
+pm.start_servers = 1
