@@ -1,1 +1,23 @@
 ---
+
+- name: Install PHP
+  yum:
+    name="{{ php_package_prefix }}{{ item }}"
+    state="{{ php_package_state }}"
+  with_items: "{{ php_base_packages }}"
+
+- name: Install PECL Mods
+  yum:
+    name="{{ php_package_prefix }}{{ item }}"
+    state="{{ php_package_state }}"
+  with_items: "{{ php_pecl_modules }}"
+
+- name: Install Browscap.INI
+  template:
+    src=browscap.ini.j2
+    dest=/etc/browscap.ini
+    owner=root
+    group=root
+    mode=0644
+
+-

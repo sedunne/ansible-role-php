@@ -1,0 +1,25 @@
+---
+
+php_version: "7.0.0"
+php_package_prefix: "php70u-"
+php_base_packages:
+  - "php-xml"
+  - "php-cli"
+  - "php-pdo"
+  - "php-gmp"
+  - "php-zip"
+  - "runtime"
+  - "php-json"
+  - "php-snmp"
+  - "php-pear"
+  - "php-devel"
+  - "php-mcrypt"
+  - "php-common"
+  - "php-process"
+  - "php-mysqlnd"
+  - "php-opcache"
+  - "php-mbstring"
+php_pecl_modules:
+  - "pecl-redis"
+  - "pecl-libsodium"
+php_package_state: "present"

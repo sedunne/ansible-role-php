@@ -9,3 +9,4 @@ galaxy_info:
     versions:
     - 7
 dependencies:
+  - nexcess.repo-scl
