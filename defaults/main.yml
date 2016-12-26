@@ -1,7 +1,7 @@
 ---
 
 php_version: "7.0.0"
-php_package_prefix: "php70u-"
+php_prefix: "php70u"
 php_base_packages:
   - "php-xml"
   - "php-cli"
@@ -24,3 +24,8 @@ php_pecl_modules:
   - "pecl-libsodium"
 php_package_state: "present"
 php_install_browscap_ini: true
+
+# PHP-FPM Vars
+php_fpm_install: false
+php_fpm_packages:
+  - "php-fpm"
