@@ -1,13 +1,15 @@
 ---
 galaxy_info:
-  author: Chris Wells
-  company: Nexcess.net LLC
-  license: MIT
-  min_ansible_version: 2.0
+  author: "Chris Wells"
+  description: "Base Nexcess Server Config (Sharable)"
+  company: "Nexcess.net LLC"
+  license: "MIT"
+  min_ansible_version: "2.0"
   platforms:
-  - name: EL
-    versions:
-      - 7
+    - name: "EL"
+      versions:
+        - "6"
+        - "7"
 dependencies:
-  - src: "https://github.com/nexcess/ansible-role-repo-nexcess-scl.git"
-    name: "nexcess.repo-scl"
+  - name: "nexcess.repo-scl"
+    src: "git+git@github.com:nexcess/ansible-role-repo-nexcess-scl.git"
