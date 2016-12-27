@@ -29,3 +29,4 @@ php_install_browscap_ini: true
 php_fpm_install: false
 php_fpm_packages:
   - "php-fpm"
+php_fpm_pools: []

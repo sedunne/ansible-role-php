@@ -1,0 +1,21 @@
+[{{ item.name }}]
+listen = /dev/shm/{{ item.name }}-php.sock
+listen.owner = {{ item.user }}
+listen.group = {{ item.group }}
+listen.mode = 0660
+user = {{ item.user }}
+group = {{ item.group }}
+catch_workers_output = no
+pm = dynamic
+pm.max_children = {{ item.config.max_children | default(32) }}
+pm.start_servers = {{ item.config.start_servers | default(8) }}
+pm.min_spare_servers = {{ item.config.min_spare_servers | default(8) }}
+pm.max_spare_servers = {{ item.config.max_spare_servers | default(16) }}
+pm.max_requests = {{ item.config.max_requests | default(10240) }}
+pm.process_idle_timeout = {{ item.config.process_idle_timeout | default("60s") }}
+php_admin_value[error_log] = {{ item.fpm_error_log }}
+request_terminate_timeout = 0
+request_slowlog_timeout = 0
+slowlog = {{ item.slow_log }}
+pm.status_path = /php_status
+rlimit_core = unlimited

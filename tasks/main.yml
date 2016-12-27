@@ -20,6 +20,14 @@
     group="root"
     mode"0644"
 
+- name: Install Opcache.ini
+  template:
+    src="opcache.ini.j2"
+    dest="/opt/nexcess/{{ php_prefix }}/root/etc/php.d/10-opcache.ini"
+    owner="root"
+    group="root"
+    mode"0644"
+
 - name: Install Browscap.INI
   template:
     src="browscap.ini.j2"
@@ -29,7 +37,6 @@
     mode"0644"
   when: php_install_browscap_ini
 
-
 - name: Setup FPM
   include: "fpm.yml"
-  when: php_fpm_install
+  when: php_fpm_enabled
