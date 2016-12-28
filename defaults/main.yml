@@ -7,7 +7,6 @@ php_base_packages:
   - "php-cli"
   - "php-pdo"
   - "php-gmp"
-  - "php-zip"
   - "runtime"
   - "php-json"
   - "php-snmp"
