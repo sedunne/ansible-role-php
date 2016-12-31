@@ -2,7 +2,7 @@
 
 - name: Install PHP
   yum:
-    name="{{ php_prefix }}-{{ item }}"
+    name="{{ php_prefix }}-{{ item }}-*{{ php_version }}"
     state="{{ php_package_state }}"
   with_items: "{{ php_base_packages }}"
 
