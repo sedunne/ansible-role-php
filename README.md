@@ -8,7 +8,7 @@ See `defaults/main.yml`.
 
 ## Dependencies
 
-- https://github.com/nexcess/ansible-role-repo-nexcess-scl
+- https://github.com/nexcess/ansible-role-repo-nexcess
 
 ## Add to Requirements
 
