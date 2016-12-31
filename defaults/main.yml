@@ -1,7 +1,8 @@
 ---
 
-php_version: "7.0.0"
-php_prefix: "php70u"
+# Base PHP Vars
+php_version: "7.1.0-3"
+php_prefix: "php71u"
 php_base_packages:
   - "php-xml"
   - "php-cli"
@@ -19,6 +20,7 @@ php_base_packages:
   - "php-opcache"
   - "php-mbstring"
 php_pecl_modules:
+  - "pecl-zip"
   - "pecl-redis"
   - "pecl-libsodium"
 php_package_state: "present"
