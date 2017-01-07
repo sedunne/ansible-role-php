@@ -14,7 +14,7 @@
 
 - name: Install PHP.ini
   template:
-    src="{{ php_prefix }}-php.ini"
+    src="{{ php_prefix }}-php.ini.j2"
     dest="/opt/nexcess/{{ php_prefix }}/root/etc"
     owner="root"
     group="root"
