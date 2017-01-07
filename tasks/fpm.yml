@@ -14,7 +14,7 @@
 - name: Install FPM Pools
   template:
     src="pool-template.conf.j2"
-    dest="/opt/nexcess/{{ php_prefix }}/root/etc/php-fpm.d"
+    dest="/opt/nexcess/{{ php_prefix }}/root/etc/php-fpm.d/{{ item.name }}.conf"
     owner="root"
     group="root"
     mode="0644"
