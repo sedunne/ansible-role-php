@@ -26,7 +26,7 @@ php_package_state: "present"
 php_install_browscap_ini: true
 
 # PHP-FPM Vars
-php_fpm_install: false
+php_fpm_enabled: false
 php_fpm_packages:
   - "php-fpm"
 php_fpm_pools: []
