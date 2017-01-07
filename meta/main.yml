@@ -11,5 +11,5 @@ galaxy_info:
         - "6"
         - "7"
 dependencies:
-  - name: "nexcess.repo"
+  - name: "nexcess.repo-nexcess"
     src: "git+git@github.com:nexcess/ansible-role-repo-nexcess.git"
