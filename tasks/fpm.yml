@@ -2,7 +2,7 @@
 
 - name: Install PHP-FPM
   yum:
-    name="{{ php_prefix }}-{{ item }}-{{ php_version }}"
+    name="{{ php_prefix }}-{{ item }}"
     state="{{ php_package_state }}"
   with_items: "{{ php_fpm_packages }}"
 
