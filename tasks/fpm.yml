@@ -11,6 +11,9 @@
     name="/opt/nexcess/{{ php_prefix }}/root/etc/php-fpm.d/www.conf"
     state="absent"
 
+- name: debug
+  debug: var=php_fpm_pools
+
 - name: Install FPM Pools
   template:
     src="pool-template.conf.j2"
