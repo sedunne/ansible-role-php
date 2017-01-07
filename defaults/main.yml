@@ -19,9 +19,9 @@ php_base_packages:
   - "php-opcache"
   - "php-mbstring"
 php_pecl_modules:
-  - "pecl-zip"
-  - "pecl-redis"
-  - "pecl-libsodium"
+  - "php-pecl-zip"
+  - "php-pecl-redis"
+  - "php-pecl-libsodium"
 php_package_state: "present"
 php_install_browscap_ini: true
 
