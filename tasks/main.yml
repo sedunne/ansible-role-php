@@ -22,7 +22,7 @@
 
 - name: Install Opcache.ini
   template:
-    src="opcache.ini.j2"
+    src="{{ php_prefix }}-opcache.ini.j2"
     dest="/opt/nexcess/{{ php_prefix }}/root/etc/php.d/10-opcache.ini"
     owner="root"
     group="root"
