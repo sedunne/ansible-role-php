@@ -11,9 +11,6 @@
     name="/opt/nexcess/{{ php_prefix }}/root/etc/php-fpm.d/www.conf"
     state="absent"
 
-- name: debug
-  debug: var=hostvars[inventory_hostname]
-
 - name: Install FPM Pools
   template:
     src="pool-template.conf.j2"
@@ -21,7 +18,7 @@
     owner="root"
     group="root"
     mode="0644"
-  with_items: php_fpm_pools
+  with_items: "{{ php_fpm_pools }}"
 
 - name: Start + Start-on-boot
   service:
