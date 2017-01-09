@@ -55,10 +55,7 @@
 #  when: php_symlink_scl_bins
 
 - name: Symlink SCL Binaries
-  debug:
-    var="{{ item.path }}"
-  with_items: found.files
-  when: php_symlink_scl_bins
+  debug: var=found
 
 - name: Setup FPM
   include: "fpm.yml"
