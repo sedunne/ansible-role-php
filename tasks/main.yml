@@ -37,6 +37,29 @@
     mode="0644"
   when: php_install_browscap_ini
 
+- name: Gather SCL Binary List
+  find:
+    paths="{{ php_root }}/usr/bin"
+    recurse="no"
+  register: found
+
+#- name: Symlink SCL Binaries
+#  file:
+#    src="{{ item.path }}"
+#    dest="/usr/bin/"
+#    owner="root"
+#    group="root"
+#    mode="0755"
+#    state="link"
+#  with_items: found.files
+#  when: php_symlink_scl_bins
+
+- name: Symlink SCL Binaries
+  debug:
+    var="{{ item.path }}"
+  with_items: found.files
+  when: php_symlink_scl_bins
+
 - name: Setup FPM
   include: "fpm.yml"
   when: php_fpm_enabled
