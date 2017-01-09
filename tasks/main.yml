@@ -51,7 +51,7 @@
     group="root"
     mode="0755"
     state="link"
-  with_items: found.files
+  with_items: "{{ found.files }}"
   when: php_symlink_scl_bins
 
 - name: Setup FPM
