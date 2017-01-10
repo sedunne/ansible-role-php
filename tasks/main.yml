@@ -12,22 +12,6 @@
     state="{{ php_package_state }}"
   with_items: "{{ php_pecl_modules }}"
 
-- name: Install PHP.ini
-  template:
-    src="{{ php_prefix }}-php.ini.j2"
-    dest="/opt/nexcess/{{ php_prefix }}/root/etc"
-    owner="root"
-    group="root"
-    mode="0644"
-
-- name: Install Opcache.ini
-  template:
-    src="{{ php_prefix }}-opcache.ini.j2"
-    dest="/opt/nexcess/{{ php_prefix }}/root/etc/php.d/10-opcache.ini"
-    owner="root"
-    group="root"
-    mode="0644"
-
 - name: Install Browscap.INI
   template:
     src="browscap.ini.j2"
