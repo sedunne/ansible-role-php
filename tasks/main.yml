@@ -38,6 +38,15 @@
   with_items: "{{ found.files }}"
   when: php_symlink_scl_bins
 
+- name: Symlink PHP.ini
+  file:
+    src="{{ php_root }}/etc/php.ini"
+    dest="/etc/php.ini"
+    owner="root"
+    group="root"
+    mode="0644"
+    state="link"
+
 - name: Setup FPM
   include: "fpm.yml"
   when: php_fpm_enabled
