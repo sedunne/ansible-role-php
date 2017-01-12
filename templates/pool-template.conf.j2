@@ -1,6 +1,6 @@
 ; {{ ansible_managed }}
 [{{ item.name }}]
-listen = {{ backnet_addr }}:9000
+listen = {{ backnet_addr }}:{{ php_fpm_port }}
 user = {{ item.user }}
 group = {{ item.group }}
 catch_workers_output = no
