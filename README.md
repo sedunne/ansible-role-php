@@ -23,4 +23,4 @@ See `defaults/main.yml`.
 
 ## License
 
-MIT / BSD
+MIT
