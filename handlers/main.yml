@@ -1,0 +1,21 @@
+---
+
+- name: start php
+  service:
+    name="{{ php_prefix }}-php-fpm"
+    state="started"
+
+- name: stop php
+  service:
+    name="{{ php_prefix }}-php-fpm"
+    state="stopped"
+
+- name: restart php
+  service:
+    name="{{ php_prefix }}-php-fpm"
+    state="restarted"
+
+- name: reload php
+  service:
+    name="{{ php_prefix }}-php-fpm"
+    state="reloaded"
