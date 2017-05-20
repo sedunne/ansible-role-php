@@ -32,4 +32,4 @@ php_fpm_enabled: false
 php_fpm_packages:
   - "php-fpm"
 php_fpm_pools: []
-php_fpm_port: 9555
+php_fpm_port: 9000
