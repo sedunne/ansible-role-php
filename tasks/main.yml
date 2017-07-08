@@ -47,6 +47,16 @@
     mode="0644"
     state="link"
 
+- name: Tweak PHP.ini Vars
+  ini_file:
+    path="{{ php_root }}/etc/php.ini"
+    section="PHP"
+    option="{{ item.name }}"
+    value="{{ item.value }}"
+    backup="no"
+    create="no"
+  with_items: "{{ php_ini_config }}"
+
 - name: Setup FPM
   include: "fpm.yml"
   when: php_fpm_enabled
