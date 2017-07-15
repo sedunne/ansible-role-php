@@ -2,6 +2,7 @@
 
 # Base PHP Vars
 php_prefix: "php71u"
+
 php_base_packages:
   - "php-xml"
   - "php-cli"
@@ -22,6 +23,8 @@ php_pecl_modules:
   - "php-pecl-zip"
   - "php-pecl-redis"
   - "php-pecl-libsodium"
+php_extra_pecl_modules: []
+php_extra_base_packages:   []
 php_package_state: "present"
 php_install_browscap_ini: true
 php_symlink_scl_bins: true
