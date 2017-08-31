@@ -70,7 +70,8 @@
 - name: Setup FPM
   include: "fpm.yml"
   when: php_fpm_enabled
+  static: no
 
 - name: Setup Opcache
   include: "opcache.yml"
-
+  static: no
