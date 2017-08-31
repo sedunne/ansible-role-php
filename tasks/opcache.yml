@@ -1,12 +1,12 @@
 ---
-- name: Check for existing OpCache config files.
+- name: Check For Existing OpCache Config Files.
   find:
     paths: "{{ item }}"
     contains: 'zend_extension(\s+)?=(\s+)?opcache\.so'
   register: php_installed_opcache_confs
   with_items: "{{ php_extension_conf_paths }}"
 
-- name: Remove any non-role-supplied OpCache config files.
+- name: Remove Any Non-role-supplied OpCache Config Files.
   file:
     path: "{{ item.1.path }}"
     state: absent
@@ -16,7 +16,7 @@
     - files
   notify: restart php
 
-- name: Ensure OpCache config file is present.
+- name: Ensure OpCache Config File is Present.
   template:
     src: opcache.ini.j2
     dest: "{{ item }}/{{ php_opcache_conf_filename }}"
@@ -28,7 +28,7 @@
   when: php_opcache_enable
   notify: restart php
 
-- name: Remove OpCache config file if OpCache is disabled.
+- name: Remove OpCache Config File if OpCache is Disabled.
   file:
     path: "{{ item }}/{{ php_opcache_conf_filename }}"
     state: absent
