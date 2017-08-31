@@ -67,10 +67,10 @@
     create="no"
   with_items: "{{ php_ini_config }}"
 
-- name: Setup Opcache
-  include: "opcache.yml"
-
 - name: Setup FPM
   include: "fpm.yml"
   when: php_fpm_enabled
+
+- name: Setup Opcache
+  include: "opcache.yml"
 
