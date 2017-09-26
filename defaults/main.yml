@@ -61,4 +61,4 @@ php_opcache_blacklist_filename: ""
 
 __php_opcache_conf_filename: "10-opcache.ini"
 __php_extension_conf_paths:
-  - "{{ php_root }}/etc/php.d"
+  - "{{ php_config }}/php.d"
