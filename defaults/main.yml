@@ -1,8 +1,9 @@
 ---
 
 # Base PHP Vars
-php_prefix: "php71u"
+php_prefix: "php71"
 php_base_packages:
+  - "php-gd"
   - "php-xml"
   - "php-cli"
   - "php-pdo"
@@ -11,9 +12,13 @@ php_base_packages:
   - "php-json"
   - "php-snmp"
   - "php-pear"
+  - "php-soap"
+  - "php-intl"
   - "php-devel"
+  - "php-xmlrpc"
   - "php-mcrypt"
   - "php-common"
+  - "php-bcmath"
   - "php-process"
   - "php-mysqlnd"
   - "php-opcache"
@@ -21,11 +26,16 @@ php_base_packages:
 php_pecl_modules:
   - "php-pecl-zip"
   - "php-pecl-redis"
+  - "php-pecl-imagick"
+  - "php-pecl-igbinary"
+  - "php-pecl-memcache"
+  - "php-pecl-memcached"
   - "php-pecl-libsodium"
 php_package_state: "present"
 php_install_browscap_ini: true
 php_symlink_scl_bins: true
-php_root: "/opt/nexcess/{{ php_prefix }}/root"
+php_root: "/opt/remi/{{ php_prefix }}/root"
+php_config: "/etc/opt/remi/{{ php_prefix }}"
 php_ini_config: []
 
 # PHP-FPM Vars

@@ -50,7 +50,7 @@
 
 - name: Symlink PHP.ini
   file:
-    src="{{ php_root }}/etc/php.ini"
+    src="{{ php_config }}/php.ini"
     dest="/etc/php.ini"
     owner="root"
     group="root"
@@ -59,7 +59,7 @@
 
 - name: Tweak PHP.ini Vars
   ini_file:
-    path="{{ php_root }}/etc/php.ini"
+    path="{{ php_config }}/php.ini"
     section="PHP"
     option="{{ item.name }}"
     value="{{ item.value }}"
