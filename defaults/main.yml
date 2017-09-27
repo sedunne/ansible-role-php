@@ -8,7 +8,6 @@ php_base_packages:
   - "php-cli"
   - "php-pdo"
   - "php-gmp"
-  - "php-fpm"
   - "runtime"
   - "php-json"
   - "php-snmp"
