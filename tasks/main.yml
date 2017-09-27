@@ -10,6 +10,11 @@
     php_extension_conf_paths="{{ __php_extension_conf_paths }}"
   when: php_extension_conf_paths is not defined
 
+- name: Install PHP Base Package
+  yum:
+    name="{{ php_prefix }}"
+    state="{{ php_package_state }}"
+
 - name: Install PHP
   yum:
     name="{{ php_prefix }}-{{ item }}"
