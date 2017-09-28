@@ -61,4 +61,5 @@ php_opcache_max_file_size: 0
 php_opcache_blacklist_filename: ""
 
 php_opcache_conf_filename: "10-opcache.ini"
-php_extension_conf_paths: "{{ php_config }}/php.d"
+php_extension_conf_paths:
+  - "{{ php_config }}/php.d"
