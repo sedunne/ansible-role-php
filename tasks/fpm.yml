@@ -8,13 +8,13 @@
 
 - name: Kill Dead PHP-FPM Pools
   file:
-    name="/etc/opt/remi/{{ php_prefix }}/php-fpm.d/www.conf"
+    name="{{ php_config_root }}/php-fpm.d/www.conf"
     state="absent"
 
 - name: Install FPM Pools
   template:
     src="pool-template.conf.j2"
-    dest="/etc/opt/remi/{{ php_prefix }}/php-fpm.d/{{ item.name }}.conf"
+    dest="{{ php_config_root }}/php-fpm.d/{{ item.name }}.conf"
     owner="root"
     group="root"
     mode="0644"
