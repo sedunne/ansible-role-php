@@ -37,6 +37,7 @@ php_symlink_scl_bins: true
 php_root: "/opt/remi/{{ php_prefix }}/root"
 php_config: "/etc/opt/remi/{{ php_prefix }}"
 php_ini_config: []
+php_single_version: true
 
 # PHP-FPM Vars
 php_fpm_enabled: false

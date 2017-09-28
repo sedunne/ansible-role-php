@@ -61,6 +61,7 @@
     group="root"
     mode="0644"
     state="link"
+    when: php_single_version == true
 
 - name: Tweak PHP.ini Vars
   ini_file:
