@@ -14,19 +14,16 @@
   yum:
     name="{{ php_prefix }}"
     state="{{ php_package_state }}"
-    disablerepo="nexcess"
 - name: Install PHP
   yum:
     name="{{ php_prefix }}-{{ item }}"
     state="{{ php_package_state }}"
-    disablerepo="nexcess"
   with_items: "{{ php_base_packages }}"
 
 - name: Install PECL Mods
   yum:
     name="{{ php_prefix }}-{{ item }}"
     state="{{ php_package_state }}"
-    disablerepo="nexcess"
   with_items: "{{ php_pecl_modules }}"
 
 - name: Install Browscap.INI
