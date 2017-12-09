@@ -4,18 +4,26 @@
   service:
     name="{{ php_prefix }}-php-fpm"
     state="started"
+  when:
+    - php_fpm_enabled
 
 - name: stop php
   service:
     name="{{ php_prefix }}-php-fpm"
     state="stopped"
+  when:
+    - php_fpm_enabled
 
 - name: restart php
   service:
     name="{{ php_prefix }}-php-fpm"
     state="restarted"
+  when:
+    - php_fpm_enabled
 
 - name: reload php
   service:
     name="{{ php_prefix }}-php-fpm"
     state="reloaded"
+  when:
+    - php_fpm_enabled

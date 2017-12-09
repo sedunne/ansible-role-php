@@ -1,5 +1,20 @@
 ---
 
+- name: Define php_opcache_conf_filename.
+  set_fact:
+    php_opcache_conf_filename="{{ __php_opcache_conf_filename }}"
+  when: php_opcache_conf_filename is not defined
+
+- name: Define php_extension_conf_paths.
+  set_fact:
+    php_extension_conf_paths="{{ __php_extension_conf_paths }}"
+  when: php_extension_conf_paths is not defined
+
+- name: Install PHP Base Package
+  yum:
+    name="{{ php_prefix }}"
+    state="{{ php_package_state }}"
+
 - name: Install PHP
   yum:
     name="{{ php_prefix }}-{{ item }}"
@@ -40,16 +55,17 @@
 
 - name: Symlink PHP.ini
   file:
-    src="{{ php_root }}/etc/php.ini"
+    src="{{ php_config_root }}/php.ini"
     dest="/etc/php.ini"
     owner="root"
     group="root"
     mode="0644"
     state="link"
+  when: php_single_version == true
 
 - name: Tweak PHP.ini Vars
   ini_file:
-    path="{{ php_root }}/etc/php.ini"
+    path="{{ php_config_root }}/php.ini"
     section="PHP"
     option="{{ item.name }}"
     value="{{ item.value }}"
@@ -60,3 +76,8 @@
 - name: Setup FPM
   include: "fpm.yml"
   when: php_fpm_enabled
+  static: no
+
+- name: Setup Opcache
+  include: "opcache.yml"
+  static: no

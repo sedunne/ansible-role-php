@@ -1,9 +1,9 @@
 ---
 
 # Base PHP Vars
-php_prefix: "php71u"
-
+php_prefix: "php71"
 php_base_packages:
+  - "php-gd"
   - "php-xml"
   - "php-cli"
   - "php-pdo"
@@ -12,24 +12,43 @@ php_base_packages:
   - "php-json"
   - "php-snmp"
   - "php-pear"
+  - "php-soap"
+  - "php-intl"
+  - "php-tidy"
+  - "php-imap"
   - "php-devel"
+  - "php-xmlrpc"
   - "php-mcrypt"
   - "php-common"
+  - "php-bcmath"
+  - "php-pspell"
   - "php-process"
   - "php-mysqlnd"
   - "php-opcache"
+  - "php-enchant"
   - "php-mbstring"
+  - "php-ioncube-loader"
 php_pecl_modules:
   - "php-pecl-zip"
+  - "php-pecl-ssh2"
+  - "php-pecl-geoip"
+  - "php-pecl-oauth"
   - "php-pecl-redis"
+  - "php-pecl-imagick"
+  - "php-pecl-igbinary"
+  - "php-pecl-memcache"
+  - "php-pecl-memcached"
   - "php-pecl-libsodium"
 php_extra_pecl_modules: []
 php_extra_base_packages:   []
 php_package_state: "present"
 php_install_browscap_ini: true
 php_symlink_scl_bins: true
-php_root: "/opt/nexcess/{{ php_prefix }}/root"
+php_remi_root: "/opt/remi"
+php_root: "{{ php_remi_root }}/{{ php_prefix }}/root"
+php_config_root: "/etc/opt/remi/{{ php_prefix }}"
 php_ini_config: []
+php_single_version: true
 
 # PHP-FPM Vars
 php_fpm_enabled: false
@@ -37,3 +56,21 @@ php_fpm_packages:
   - "php-fpm"
 php_fpm_pools: []
 php_fpm_port: 9000
+
+# OpCache settings (useful for PHP >=5.5).
+php_opcache_zend_extension: "opcache.so"
+php_opcache_enable: 1
+php_opcache_enable_cli: 0
+php_opcache_memory_consumption: 96
+php_opcache_interned_strings_buffer: 16
+php_opcache_max_accelerated_files: 4096
+php_opcache_max_wasted_percentage: 5
+php_opcache_validate_timestamps: 1
+php_opcache_revalidate_path: 0
+php_opcache_revalidate_freq: 2
+php_opcache_max_file_size: 0
+php_opcache_blacklist_filename: ""
+
+php_opcache_conf_filename: "10-opcache.ini"
+php_extension_conf_paths:
+  - "{{ php_config_root }}/php.d"
