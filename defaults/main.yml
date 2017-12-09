@@ -39,6 +39,8 @@ php_pecl_modules:
   - "php-pecl-memcache"
   - "php-pecl-memcached"
   - "php-pecl-libsodium"
+php_extra_pecl_modules: []
+php_extra_base_packages:   []
 php_package_state: "present"
 php_install_browscap_ini: true
 php_symlink_scl_bins: true
