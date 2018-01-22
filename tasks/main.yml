@@ -50,8 +50,16 @@
     group="root"
     mode="0755"
     state="link"
+    force="{{ item.isreg }}"
   with_items: "{{ found.files }}"
-  when: php_symlink_scl_bins
+  when: 
+    - php_symlink_scl_bins
+    - item.isreg
+
+- name: Stat PHP.ini
+  stat:
+    path="/etc/php.ini"
+  register: phpini
 
 - name: Symlink PHP.ini
   file:
@@ -61,7 +69,10 @@
     group="root"
     mode="0644"
     state="link"
-  when: php_single_version == true
+    force="{{ phpini.stat.isreg }}"
+  when: 
+    - php_single_version 
+    - phpini.stat.isreg
 
 - name: Tweak PHP.ini Vars
   ini_file:
