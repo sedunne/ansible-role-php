@@ -52,7 +52,7 @@
     state="link"
     force="{{ item.isreg }}"
   with_items: "{{ found.files }}"
-  when: 
+  when:
     - php_symlink_scl_bins
     - item.isreg
 
@@ -70,8 +70,8 @@
     mode="0644"
     state="link"
     force="{{ phpini.stat.isreg }}"
-  when: 
-    - php_single_version 
+  when:
+    - php_single_version
     - phpini.stat.isreg
 
 - name: Tweak PHP.ini Vars

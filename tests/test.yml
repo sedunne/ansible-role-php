@@ -1,0 +1,7 @@
+---
+- hosts: all
+
+  roles:
+    - { role: role_under_test, php_prefix: "php70" }
+    - { role: role_under_test, php_prefix: "php71" }
+
