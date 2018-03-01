@@ -16,7 +16,6 @@ php_base_packages:
   - "php-intl"
   - "php-tidy"
   - "php-imap"
-  - "php-devel"
   - "php-xmlrpc"
   - "php-mcrypt"
   - "php-common"
