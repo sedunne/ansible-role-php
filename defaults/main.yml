@@ -48,6 +48,13 @@ php_root: "{{ php_remi_root }}/{{ php_prefix }}/root"
 php_config_root: "/etc/opt/remi/{{ php_prefix }}"
 php_ini_config: []
 php_single_version: true
+php_symlink_base_php: false
+php_symlink_base_php_path: "{{ php_remi_root }}/php56/root/usr/bin/php"
+php_symlink_base_php_packages:
+  - "php"
+  - "php-devel"
+  - "php-cli"
+  - "php-pear"
 
 # PHP-FPM Vars
 php_fpm_enabled: false

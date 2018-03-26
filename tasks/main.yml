@@ -63,6 +63,22 @@
     state="link"
   when: php_single_version == true
 
+- name: Remove Base PHP packages
+  package:
+    name="{{ item }}"
+    state="absent"
+  with_items: "{{ php_symlink_base_php_packages }}"
+  when: php_symlink_base_php
+
+- name: Symlink Base PHP
+  file:
+    src="{{ php_symlink_base_php_path }}"
+    dest="/usr/bin/php"
+    owner="root"
+    group="root"
+    state="link"
+  when: php_symlink_base_php
+
 - name: Tweak PHP.ini Vars
   ini_file:
     path="{{ php_config_root }}/php.ini"
